@@ -4,8 +4,9 @@ from PyQt5 import QtWidgets, QtCore
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
+        MainWindow.setWindowFlag(QtCore.Qt.WindowStaysOnTopHint)
         MainWindow.setEnabled(True)
-        MainWindow.resize(300, 400)
+        MainWindow.resize(300, 450)
 
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -49,7 +50,8 @@ class Ui_MainWindow(object):
         self.comboBox_connection.setEditable(True)
         self.comboBox_connection.setObjectName("comboBox_connection")
         self.comboBox_connection.addItem("COM1")
-        self.comboBox_connection.addItem("COM2")
+        self.comboBox_connection.addItem("COM3")
+        self.comboBox_connection.addItem("COM5")
         self.horizontalLayout.addWidget(self.comboBox_connection)
 
         self.comboBox_baudrate = QtWidgets.QComboBox(self.widget)
@@ -87,6 +89,26 @@ class Ui_MainWindow(object):
         self.checkBox_mistake = QtWidgets.QCheckBox('Message with mistake', self.layoutWidget_2)
         self.checkBox_mistake.setObjectName("checkBox_mistake")
         self.horizontalLayout_2.addWidget(self.checkBox_mistake)
+
+        self.comboBox_connection_2 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_connection_2.setGeometry(QtCore.QRect(10, 375, 77, 20))
+        self.comboBox_connection_2.setEditable(True)
+        self.comboBox_connection_2.setObjectName("comboBox_connection_2")
+        self.comboBox_connection_2.addItem("COM2")
+        self.comboBox_connection_2.addItem("COM4")
+        self.comboBox_connection_2.addItem("COM6")
+
+        self.checkbox_active_station = QtWidgets.QCheckBox("Active station", self.centralwidget)
+        self.checkbox_active_station.setGeometry(QtCore.QRect(95, 375, 100, 20))
+        self.checkbox_active_station.setObjectName("checkbox_active_station")
+
+        self.pushButton_init_ring = QtWidgets.QPushButton("InitRing", self.centralwidget)
+        self.pushButton_init_ring.setGeometry(QtCore.QRect(200, 375, 77, 20))
+        self.pushButton_init_ring.setObjectName("pushButton_init_ring")
+
+        self.pushButton_shutdown = QtWidgets.QPushButton("Shutdown", self.centralwidget)
+        self.pushButton_shutdown.setGeometry(QtCore.QRect(95, 400, 100, 25))
+        self.pushButton_shutdown.setObjectName("pushButton_shutdown")
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
